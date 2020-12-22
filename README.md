@@ -122,7 +122,7 @@ jobs:
 ## Roadmap
 
 - [x] Basic github action
-- [ ] Basic precommit hook
+- [x] Basic precommit hook
 - [ ] Tests
 - [ ] Option to use local mermaid cli to render and store images locally
 - [ ] Better markdown parsing
