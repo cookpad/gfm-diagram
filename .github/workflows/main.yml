@@ -36,7 +36,11 @@ jobs:
     - name: show changes
       id: changes
       run: |
-        echo "::set-output name=files::$(git status --porcelain | sed -e 's!.*/!!')"
+        echo "::set-output name=files::$(git status --porcelain | sed -e 's!.*/!!' | xargs)"
+
+    - name: md files tocommit
+      run: |
+        echo ${{ steps.changes.outputs.files }}
 
     - name: Commit files
       if: ${{steps.changes.outputs.files}} != ""
