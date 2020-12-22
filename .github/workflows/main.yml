@@ -30,7 +30,8 @@ jobs:
     - name: Update mermaid diagram images
       uses: ./
       with:
-        files: ${{ steps.getfile.outputs.files }}
+        files: README.md
+        #files: ${{ steps.getfile.outputs.files }}
 
     - name: show changes
       id: changes
