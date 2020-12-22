@@ -1,6 +1,6 @@
 # GFM Diagram
 
-> From cookpad search hack 2020
+> From [cookpad](https://cookpad.com) search hack 2020
 
 **Get rendered [Mermaid](https://mermaid-js.github.io/mermaid/#/) diagrams in github markdown previews**
 
