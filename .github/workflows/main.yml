@@ -28,6 +28,7 @@ jobs:
         echo ${{ steps.getfile.outputs.files }}
 
     - name: Update mermaid diagram images
+      if: steps.getfile.outputs.files
       uses: ./
       with:
         files: ${{ steps.getfile.outputs.files }}
@@ -42,14 +43,14 @@ jobs:
         echo ${{ steps.changes.outputs.files }}
 
     - name: Commit files
-      if: ${{steps.changes.outputs.files}} != ""
+      if: steps.changes.outputs.files
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git commit -m "Updated diagrams" -a
 
     - name: Push changes
-      if: ${{steps.getfile.outputs.files}} != ""
+      if: steps.getfile.outputs.files
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
