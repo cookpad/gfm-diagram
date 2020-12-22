@@ -8,5 +8,5 @@ repos:
         language: python
         language_version: python3
         require_serial: true
-        types: [python]
+        types: [file]
         files: '\\.md$'
