@@ -76,7 +76,7 @@ jobs:
 
     name: "Update mermaid diagram renders in Markdown"
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, 'ci skip') and !contains(github.event.head_commit.message, 'skip ci')"
+    if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
 
     steps:
     - uses: actions/checkout@v2
