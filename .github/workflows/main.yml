@@ -36,8 +36,7 @@ jobs:
     - name: show changes
       id: changes
       run: |
-        ::set-output name=files::$(git status --porcelain | sed -e 's!.*/!!')
-        git status
+        echo "::set-output name=files::$(git status --porcelain | sed -e 's!.*/!!')"
 
     - name: Commit files
       if: ${{steps.changes.outputs.files}} != ""
