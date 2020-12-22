@@ -2,8 +2,8 @@ name: 'Compile Mermaid in Markdown'
 
 on:
   push:
-    #paths:
-    #  - '**/*.md'
+    paths:
+      - '**/*.md'
     branches-ignore:
       - "master"
       - "main"
@@ -30,8 +30,7 @@ jobs:
     - name: Update mermaid diagram images
       uses: ./
       with:
-        files: demo/README.md
-        #files: ${{ steps.getfile.outputs.files }}
+        files: ${{ steps.getfile.outputs.files }}
 
     - name: show changes
       id: changes
