@@ -82,12 +82,16 @@ def watch(folders):
     for folder in folders:
         observer.schedule(event_handler, str(folder), recursive=True)
     observer.start()
+    print("Watching for markdown file changes")
     try:
         while True:
             time.sleep(1)
+    except KeyboardInterrupt:
+        pass
     finally:
         observer.stop()
         observer.join()
+        print("Exiting")
 
 
 def run():
