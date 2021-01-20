@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="GFMDiagrams",
+    name="gfmdiagrams",
     version="0.2.0",
     url="https://github.com/cookpad/gfm-diagram",
     author="Ben Howes",
